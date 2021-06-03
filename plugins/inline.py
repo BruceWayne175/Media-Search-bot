@@ -14,12 +14,12 @@ cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
-    """Show search results for given inline query"""
+    """දැනට ලබා දී ඇති PDF 👇"""
 
     if AUTH_CHANNEL and not await is_subscribed(bot, query):
         await query.answer(results=[],
                            cache_time=0,
-                           switch_pm_text='You have to subscribe channel',
+                           switch_pm_text='අපගේ Group එකට Join වී සිටීම අනිවාර්යයි',
                            switch_pm_parameter="subscribe")
         return
 
@@ -44,7 +44,7 @@ async def answer(bot, query):
             InlineQueryResultCachedDocument(
                 title=file.file_name,
                 file_id=file.file_id,
-                caption=file.caption or "",
+                caption=file.caption or "⚕️ @PothLokaya",
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup))
 
@@ -73,8 +73,8 @@ async def answer(bot, query):
 def get_reply_markup(username, query):
     url = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
     buttons = [[
-        InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-        InlineKeyboardButton('Share bot', url=url),
+        InlineKeyboardButton('Search again🔍', switch_inline_query_current_chat=query),
+        InlineKeyboardButton('Share Bot♥️', url=url),
     ]]
     return InlineKeyboardMarkup(buttons)
 
