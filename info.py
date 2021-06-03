@@ -31,10 +31,12 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 START_MSG = """
-**Hi, I'm Media Search bot**
+**Hi, Thank you for using our bot ♥️**
 
-Here you can search files in inline mode. Just press following buttons and start searching.
+**⚕️ඔබට PDF ලබා ගැනීමට Buttons භාවිතා කිරීමට හැකිය.**
+
+**⚕️නැතිනම් පහත සඳහන් "Search 🔍" බටනය මඟින් ඔබට අවශ්‍ය PDF එක ලබා ගැනීමට හැකිය👇**
 """
 
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
-INVITE_MSG = environ.get('INVITE_MSG', 'Please join @.... to use this bot')
+INVITE_MSG = environ.get('INVITE_MSG', 'මෙය භාවිතා කිරීමට අපගේ Group එකට එකතු වී සිටීම අනිවාර්ය වේ.')
